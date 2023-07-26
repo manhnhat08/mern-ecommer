@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical, faEarthAsia, faCircleQuestion, faKeyboard, faSignOut, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -8,8 +8,25 @@ import images from '~/client/assets/images';
 import { Wrapper as PopperWrapper } from '~/client/components/Popper';
 import SearchItem from '~/client/components/SearchItem';
 import Button from '~/client/components/Button';
+import Menu from '~/client/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon : <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'Tiếng Việt',
+    },
+    {
+        icon : <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Hỏi đáp',
+        to: '/Feedback'
+    },
+    {
+        icon : <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Bàn phím',
+    }
+];
 
 function Header() {
     const [searchRessult, setSearchResult] = useState([]);
@@ -17,8 +34,8 @@ function Header() {
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([]);
-        }, 0)
-    }, [])
+        }, 0);
+    }, []);
 
     return (
         <header className={cx('wrapper')}>
@@ -40,9 +57,11 @@ function Header() {
                                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                                         <span>kết quả tìm kiếm cho '...'</span>
                                     </div>
-                                    <div className={cx('search-title')}> 
+                                    <div className={cx('search-title')}>
                                         <h4>Khóa học</h4>
-                                        <a href='/' className={cx('search-title-seeMore')}>Xem thêm</a>
+                                        <a href="/" className={cx('search-title-seeMore')}>
+                                            Xem thêm
+                                        </a>
                                     </div>
                                     <SearchItem />
                                     <SearchItem />
@@ -67,9 +86,16 @@ function Header() {
                     </Tippy>
                 </div>
                 <div className={cx('action')}>
-                    <Button primary >
-                        Đăng nhập   
-                    </Button>
+                    <Button primary rounded leftIcon={<FontAwesomeIcon icon={faSignIn} />}>Đăng nhập</Button>
+                    <Button outline rounded rightIcon={<FontAwesomeIcon icon={faSignOut} />}>Đăng xuất</Button>
+
+                    <Menu
+                        items={MENU_ITEMS}
+                    >
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

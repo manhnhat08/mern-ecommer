@@ -1,19 +1,50 @@
-.wrapper {
+.wrapper {    
+    --button-color: #f05123 ;
+    --text-button-color: #fff ;
     min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
     
 }
 
 .primary {
-    background-color: #f05123;
-    border-radius: 999px;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 600;
-    cursor: pointer;
+    background-color: var(--button-color);
+    color: var(--text-button-color);
 
     &:hover {
-        background-color: #fa673e;
+        opacity: 0.9;
     }
+}
+
+.outline {
+    color: var(--button-color);
+    border-color: currentColor;
+    
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+
+}
+
+.rounded {
+    border-radius: 999px;
+}
+
+.title + .icon, .icon + .title {
+    margin-left: 8px;
 }

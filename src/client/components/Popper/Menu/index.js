@@ -13,10 +13,11 @@ function Menu({ children, items = [] }) {
 
     return (
         <Tippy
+            visible
             interactive
             placement="bottom-end"
             render={(attrs) => (
-                <div className={cx('content')} tabIndex="-1" {...attrs}>
+                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>{renderItems()}</PopperWrapper>
                 </div>
             )}

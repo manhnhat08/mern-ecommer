@@ -26,6 +26,22 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
+
+    ::-webkit-scrollbar {
+        border-radius: 0;
+        height: 8px;
+        width: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        border-radius: 0;
+        background-color: transparent;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,.15);
+        border-radius: 4px;
+      }
 }
 
 button, input, [tabindex] {
@@ -34,6 +50,24 @@ button, input, [tabindex] {
 }
 
 a[href] {
-    color: var(--text-color-path);
+    color: var(--black);
     text-decoration: none;
+}
+
+// Custom tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: #414141;
+    }
+
+    .tippy-arrow {
+        background-color: #444444;
+    }
+
+    .tippy-content {
+        padding: 5px 9px;
+    }
 }

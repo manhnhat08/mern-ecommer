@@ -1,4 +1,3 @@
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faEllipsisVertical,
@@ -13,16 +12,19 @@ import {
     faBlog,
     faAddressCard,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
+
 import images from '~/client/assets/images';
 import Button from '~/client/components/Button';
 import Menu from '~/client/components/Popper/Menu';
 import { UplloadIcon } from '~/client/components/Icons';
 import Image from '~/client/components/Image';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -109,9 +111,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <a href="/">
+                    <Link to={routesConfig.home}>
                         <img src={images.logo} alt="logo-header" />
-                    </a>
+                    </Link>
                     <h4 className={cx('logo-heading')}>Học tiếng anh để làm gì</h4>
                 </div>
                 <div className={cx('search')}>
@@ -142,7 +144,7 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://gachplattaicera.vn/wp-content/uploads/gach-lat-nen-50x50-9576.jpg"
+                                src=""
                                 className={cx('user-avatar')}
                                 
                                 alt="Dang Ngoc Manh Nhat"

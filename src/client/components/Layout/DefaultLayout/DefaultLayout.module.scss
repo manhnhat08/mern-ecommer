@@ -1,12 +1,13 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0 28px;
+    padding: var(--default-layout-padding-header);
 }
 
 .container {
     width: 100%;
     display: flex;
+    margin-top: var(--default-layout-height-header);
 }
 
 .content {

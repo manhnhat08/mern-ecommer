@@ -3,9 +3,19 @@
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
-    height: 66px;
-    border-bottom: 1px solid #e8ebed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: var(--default-layout-height-header);
+    padding: var(--default-layout-padding-header);
     display: flex;
+    justify-content: center;
+    background-color: var(--white);
+    border-bottom: 1px solid #e8ebed;
+
+
 }
 
 .inner {

@@ -33,6 +33,14 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         });
     };
 
+    const HandleBackMenu = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    }
+
+    const HandleResetMenu = () => {
+        setHistory(prev => prev.slice(0, 1))
+    }
+
     return (
         <Tippy
             delay={[0, 400]}
@@ -45,9 +53,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                         {history.length > 1 && (
                             <Header 
                             title={current.title} 
-                            onBack={() => {
-                                setHistory((prev) => prev.slice(0, prev.length - 1));
-                            }}
+                            onBack={HandleBackMenu}
                             />
                         )}
                         <div className={cx('menu-body')}>{renderItems()}</div>
@@ -55,7 +61,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 </div>
             )}
             // Don't hover will set first menu
-            onHide={() => setHistory(prev => prev.slice(0, 1))}
+            onHide={HandleResetMenu}
         >
             {children}
         </Tippy>

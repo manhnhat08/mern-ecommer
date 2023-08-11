@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publRoutes } from '~/routes';
-import { DefaultLayout } from '~/client/components/Layout';
+import { DefaultLayout } from '~/client/layouts';
 
 const App = () => {
     return (

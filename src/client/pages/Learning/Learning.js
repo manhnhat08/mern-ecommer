@@ -1,5 +1,5 @@
 function Folowing() {
-    return <h2>Folowing page</h2>
+    return <h2>Learning page</h2>
 }
 
 export default Folowing;

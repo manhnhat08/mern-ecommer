@@ -1,0 +1,63 @@
+.wrapper {
+    --width: 96px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    left: 0;
+    padding: 0 8px;
+    // position: -webkit-sticky;
+    position: sticky;
+    top: 74px;
+    width: var(--width);
+    z-index: 8;
+}
+
+.createBlog-btn {
+    align-items: center;
+    background-color: #1473e6;
+    border-color: #1473e6;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    margin: 10px 0 2px;
+    user-select: none;
+    width: 44px;
+}
+
+.plus-icon:hover {
+    transform: scale(1.4);
+    transition: -webkit-transform .9s ease;
+    transition: transform .9s ease;
+    transition: transform .3s ease,-webkit-transform .3s ease;
+    
+}
+
+// Tippy CSS
+.preview {
+    animation: CreateButton_fadeIn__QNZHn .3s ease;
+    padding-bottom: 8px;
+    min-width: 200px;
+}
+
+.module-link {
+    display: flex;
+    align-items: center;
+    color: #444;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 12px 20px;
+    transition: .3s;
+
+    &:hover {
+        background-color: #f0f0f0;
+        color: #292929;
+    }
+}
+
+.module-link span {
+    margin-left: 16px;
+}

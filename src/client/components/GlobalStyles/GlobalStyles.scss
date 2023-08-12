@@ -1,6 +1,10 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+// Style CSS slick slider in Home page
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 :root {
     --primary: #fe2c55;
     --black: #000;
@@ -77,4 +81,48 @@ body {
     .tippy-content {
         padding: 5px 9px;
     }
+}
+
+
+// Custom CSS react-slick slide library
+
+.slick-prev, .slick-next {
+    z-index: 1;
+    right: -10px;
+
+}
+
+.slick-prev:before, .slick-next:before {
+    color: black;
+    font-size: 3.5rem;
+}
+
+.slick-dots {
+    bottom: -38px;
+    left: 40px;
+    text-align: left;
+}
+
+.slick-dots li.slick-active, body .slick-dots li.slick-active button {
+    width: 50px;
+}
+
+.slick-dots li, body .slick-dots li button {
+    width: 32px;
+}
+
+.slick-dots li.slick-active button:before {
+    background-color: #9aa6af;
+    width: 50px;
+}
+
+.slick-dots li button:before {
+    background-color: #dce0e3;
+    border-radius: 4px;
+    content: "";
+    height: 8px;
+    margin-right: 10px;
+    opacity: 1;
+    transition: width .3s linear,background-color .3s linear;
+    width: 32px;
 }

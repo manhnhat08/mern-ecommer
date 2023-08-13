@@ -10,13 +10,56 @@ import slide5 from '~/client/assets/images/slider/slide5.png';
 import SlideItem from './SlideItem';
 
 const cx = classNames.bind(styles);
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "red", color:"gray" }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "green" }}
+        onClick={onClick}
+      />
+    );
+  }
 function Slide() {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        arrows: true,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+              breakpoint: 1198,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                rows: 1
+              }
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                rows: 1
+              }
+            }
+          ]
     };
 
     return (

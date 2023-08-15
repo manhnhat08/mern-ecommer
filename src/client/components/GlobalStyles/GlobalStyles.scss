@@ -86,16 +86,29 @@ body {
 
 // Custom CSS react-slick slide library
 
-// .slick-prev, .slick-next {
-//     z-index: 1;
-//     right: -10px;
+.slick-prev {
+    z-index: 1;
+    left: -20px;
 
-// }
+}
+.slick-next {
+    z-index: 1;
+    right: -10px;
+}
 
-// .slick-prev:before, .slick-next:before {
-//     color: black;
-//     font-size: 3.5rem;
-// }
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: "slick";
+    font-size: 30px;
+    line-height: 1;
+    opacity: 0.75;
+    color: #c4c4c4;
+}
 
 .slick-dots {
     bottom: -38px;

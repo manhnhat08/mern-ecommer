@@ -10,27 +10,49 @@ import slide5 from '~/client/assets/images/slider/slide5.png';
 import SlideItem from './SlideItem';
 
 const cx = classNames.bind(styles);
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red", color:"gray" }}
-        onClick={onClick}
-      />
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
+const SlideItems = [
+    {
+        heading     : "Learning English",
+        desc        : "Dang Ngoc Manh Nhat 1111111",
+        nameBtn     : 'Tìm hiểu thêm',
+        href        : "/",
+        slideImage  : slide1,
+        styles      : 'linear-gradient(to right, rgb(104, 40, 250), rgb(255, 186, 164))'
+    },
+    {
+        heading     : "Learning Math",
+        desc        : "Dang Ngoc Manh Nhat 222222222",
+        nameBtn     : 'Tìm hiểu thêm',
+        href        : "/",
+        slideImage  : slide2,
+        styles      : 'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))'
+    },
+    {
+        heading     : "Learning Physic",
+        desc        : "Dang Ngoc Manh Nhat 33333333",
+        nameBtn     : 'Tìm hiểu thêm',
+        href        : "/",
+        slideImage  : slide3,
+        styles      : 'linear-gradient(to right, rgb(118, 18, 255), rgb(5, 178, 255))',
+    },
+    {
+        heading     : "Learning Music",
+        desc        : "Dang Ngoc Manh Nhat 444444",
+        nameBtn     : 'Tìm hiểu thêm',
+        href        : "/",
+        slideImage  : slide4,
+        styles      : 'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))'
+    },
+    {
+        heading     : "Learning chemistry",
+        desc        : "Dang Ngoc Manh Nhat 5555555555",
+        nameBtn     : 'Tìm hiểu thêm',
+        href        : "/",
+        slideImage  : slide5,
+        styles      : 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))'
+    }
+]
+
 function Slide() {
     var settings = {
         dots: true,
@@ -39,9 +61,6 @@ function Slide() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        arrows: true,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
         responsive: [
             {
               breakpoint: 1198,
@@ -66,45 +85,16 @@ function Slide() {
         <div className={cx('slide-show')}>
             <div className={cx('wrapper')}>
                 <Slider {...settings}>
-                    <SlideItem
-                        heading="Learning English"
-                        desc="Dang Ngoc Manh Nhat"
-                        nameBtn='Tìm hiểu thêm'
-                        href="/"
-                        slideImage={slide1}
+                    {SlideItems.map((item, index) => (
+                    <SlideItem key={index}
+                       heading={item.heading}
+                       desc={item.desc}
+                       nameBtn={item.nameBtn}
+                       href={item.href}
+                       slideImage={item.slideImage}
+                       styles={item.styles}
                     />
-
-                    <SlideItem
-                        heading="Learning Math"
-                        desc="Dang Ngoc Manh Nhat"
-                        nameBtn='Tìm hiểu thêm'
-                        href="/"
-                        slideImage={slide2}
-                    />
-
-                    <SlideItem
-                        heading="Learning Physic"
-                        desc="Dang Ngoc Manh Nhat"
-                        nameBtn='Tìm hiểu thêm'
-                        href="/"
-                        slideImage={slide3}
-                    />
-
-                    <SlideItem
-                        heading="Learning Music"
-                        desc="Dang Ngoc Manh Nhat"
-                        nameBtn='Tìm hiểu thêm'
-                        href="/"
-                        slideImage={slide4}
-                    />
-
-                    <SlideItem
-                        heading="Learning chemistry"
-                        desc="Dang Ngoc Manh Nhat"
-                        nameBtn='Tìm hiểu thêm'
-                        href="/"
-                        slideImage={slide5}
-                    />
+                    ))}
                 </Slider>
             </div>
         </div>

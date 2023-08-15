@@ -28,22 +28,24 @@ function Sidebar() {
     }
 
     return <aside className={cx('wrapper')}>
-        <Tippy
-            interactive
-            delay={[800,0]}
-            placement="bottom-end"
-            render={renderPreview}
-        >
-            <div className={cx('createBlog-btn')}>
-                <PlusIcon className={cx('plus-icon')}/>
-            </div>
-        </Tippy>
-        <Menu>
-            <MenuItem title='Home' to={config.routes.home} icon={<HomeIcon />}/>
-            <MenuItem title='Lộ trình' to={config.routes.learning} icon={<RoadIcon />}/>
-            <MenuItem title='Học' to={config.routes.course} icon={<LightbulbIcon />}/>
-            <MenuItem title='Blog' to={config.routes.blog} icon={<NewspaperIcon />}/>
-        </Menu>
+        <div className={cx('sidebar-wrapper')}>
+            <Tippy
+                interactive
+                delay={[800,0]}
+                placement="bottom-end"
+                render={renderPreview}
+            >
+                <div className={cx('createBlog-btn')}>
+                    <PlusIcon className={cx('plus-icon')}/>
+                </div>
+            </Tippy>
+            <Menu>
+                <MenuItem title='Home' to={config.routes.home} icon={<HomeIcon />}/>
+                <MenuItem title='Lộ trình' to={config.routes.learning} icon={<RoadIcon />}/>
+                <MenuItem title='Học' to={config.routes.course} icon={<LightbulbIcon />}/>
+                <MenuItem title='Blog' to={config.routes.blog} icon={<NewspaperIcon />}/>
+            </Menu>
+        </div>
     </aside>
 }
 

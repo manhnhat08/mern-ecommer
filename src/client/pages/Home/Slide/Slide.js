@@ -18,6 +18,7 @@ const SlideItems = [
         href        : "/",
         slideImage  : slide1,
         styles      : 'linear-gradient(to right, rgb(104, 40, 250), rgb(255, 186, 164))'
+        // styles      : 'linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%)'
     },
     {
         heading     : "Learning Math",
@@ -26,6 +27,7 @@ const SlideItems = [
         href        : "/",
         slideImage  : slide2,
         styles      : 'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))'
+        // styles      : 'linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%)'
     },
     {
         heading     : "Learning Physic",
@@ -33,7 +35,8 @@ const SlideItems = [
         nameBtn     : 'Tìm hiểu thêm',
         href        : "/",
         slideImage  : slide3,
-        styles      : 'linear-gradient(to right, rgb(118, 18, 255), rgb(5, 178, 255))',
+        // styles      : 'linear-gradient(to right, rgb(118, 18, 255), rgb(5, 178, 255))'
+        styles      : 'linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%)'
     },
     {
         heading     : "Learning Music",
@@ -42,6 +45,7 @@ const SlideItems = [
         href        : "/",
         slideImage  : slide4,
         styles      : 'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))'
+        // styles      : 'linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)'
     },
     {
         heading     : "Learning chemistry",
@@ -50,6 +54,7 @@ const SlideItems = [
         href        : "/",
         slideImage  : slide5,
         styles      : 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))'
+        // styles      : 'linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%)'
     }
 ]
 

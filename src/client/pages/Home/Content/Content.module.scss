@@ -1,6 +1,18 @@
 .wrapper {
     margin-top: 70px;
     overflow: hidden;
-    height: 2000px;
     padding: 0 44px 74px;
+}
+
+.label {
+    background-color: #1473e6;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 3px 6px;
+    position: relative;
+    right: -8px;
+    text-transform: uppercase;
+    top: -6px;
 }
